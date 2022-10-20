@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
-function App() {
+import "./styles/main.css";
+import "./styles/nullStyles.css";
+
+export const SwicthModeContext = React.createContext();
+export const SearchContext = React.createContext();
+const App = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <SearchContext.Provider value={{ searchValue, setSearchValue }}>
+      <SwicthModeContext.Provider value={{ isDarkMode, setIsDarkMode }}>
+        <div className="wrapper">
+          <Header />
+          <Home />
+          {/* <NotFound /> */}
+          <Footer />
+        </div>
+      </SwicthModeContext.Provider>
+    </SearchContext.Provider>
   );
-}
+};
 
 export default App;

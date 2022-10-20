@@ -1,0 +1,17 @@
+.sr {
+  padding: 5px 12px;
+  border-radius: 8px;
+  border: none;
+  display: block;
+  padding-right: 25px;
+}
+.icon_sr {
+  width: 17px;
+  position: absolute;
+  left: 458px;
+  top: 32px;
+}
+.sr:focus {
+  color: #212529;
+  outline: 0;
+}

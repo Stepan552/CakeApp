@@ -1,0 +1,111 @@
+.footer {
+  font-family: Rubik;
+  color: #fff;
+  line-height: 140%;
+}
+.footer__top {
+  padding: 25px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ffffff;
+}
+.footer__social img {
+  display: inline-block;
+}
+.footer__social img:not(:last-child) {
+  margin-right: 25px;
+}
+.address {
+  font-weight: 500;
+  font-size: 18px;
+  font-style: normal;
+  border-bottom: 2px dashed #ffffff;
+}
+.footer__btn-connect {
+  display: block;
+  padding: 8px 15px;
+  background: #ff0000;
+  border-radius: 5px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: #d3b288;
+}
+.footer__btn-connect:hover {
+  color: #fff;
+}
+.footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0px;
+}
+.schedule {
+  padding: 50px 60px;
+  border: 3px solid #ffffff;
+}
+.schedule__title {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 140%;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.schedule__days p:not(:last-child) {
+  margin-bottom: 15px;
+}
+.schedule__days p span {
+  float: right;
+  padding-left: 48px;
+}
+.schedule__days {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ffffff;
+  margin-bottom: 20px;
+}
+.schedule__weekend-days {
+  text-align: center;
+}
+.schedule__weekend-days,
+.schedule__days {
+  font-weight: 400;
+  font-size: 14px;
+}
+.footer__added-info {
+  display: flex;
+}
+.footer__added-info > *:not(:last-child) {
+  margin-right: 22px;
+}
+.title-footer-info {
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.main-links__body > * {
+  display: block;
+}
+.payment__body > * {
+  display: block;
+}
+.payment__body > *:not(:last-child) {
+  margin-bottom: 15px;
+}
+.main-links__link > a {
+  font-weight: 400;
+  font-size: 14px;
+  color: #fff;
+}
+.main-links__link:not(:last-child) {
+  margin-bottom: 10px;
+}
+.contacts__body a {
+  font-weight: 400;
+  font-size: 14px;
+  color: #fff;
+}
+.contact-footer-block:not(:last-child) {
+  margin-bottom: 20px;
+}
