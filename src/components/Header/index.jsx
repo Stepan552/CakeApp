@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import styles from "./header.module.css";
 import "../../styles/navigation.css";
 import SwicthMode from "../SwicthMode";
@@ -9,12 +10,12 @@ import Search from "../Search";
 const Header = () => {
   const { isDarkMode } = useContext(SwicthModeContext);
   const Links = [
-    { title: "На початок", route: "#" },
-    { title: "Про нас", route: "#" },
-    { title: "Начинки", route: "#" },
-    { title: "Меню", route: "#" },
-    { title: "Замовити", route: "#" },
-    { title: "Питання", route: "#" },
+    { title: "На початок", route: "/" },
+    { title: "Про нас", route: "/about" },
+    { title: "Начинки", route: "/inner" },
+    { title: "Меню", route: "/menu" },
+    { title: "Замовити", route: "/order" },
+    { title: "Питання", route: "/questions" },
   ];
 
   return (
@@ -27,9 +28,9 @@ const Header = () => {
           <Search />
           <nav className="nav">
             {Links.map((elem, index) => (
-              <a className="nav_link" href={elem.route} key={index}>
+              <Link className="nav_link" to={elem.route} key={index}>
                 {elem.title}
-              </a>
+              </Link>
             ))}
           </nav>
           <SwicthMode />

@@ -5,7 +5,7 @@ import { SearchContext } from "../../App";
 const Search = () => {
   const { searchValue, setSearchValue } = useContext(SearchContext);
   return (
-    <div className="Search">
+    <div className={styles.search}>
       <input
         type="text"
         className={styles.sr}

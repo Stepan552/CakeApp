@@ -48,13 +48,19 @@ body {
   transition: background 0.2s ease-in-out 0.1s;
   transition: color 0.2s ease-in-out 0.1s;
 } */
-.not_found__column {
+.not_found__column,
+.about__column {
   margin-top: 40px;
   border: 1px solid black;
   padding: 20px 0;
   margin-bottom: 40px;
   border-radius: 15px;
 }
-.not_found__column > * {
+.not_found__column > *,
+.about__column > * {
   text-align: center;
+}
+
+.about__column {
+  padding: 20px 40px;
 }
