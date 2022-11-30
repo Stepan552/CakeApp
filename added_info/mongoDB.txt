@@ -1,3 +1,0 @@
-DATA for log in in account: 
-password: Stiopa8765432177
-email: Stepan.Kyrstjuk.clg@chnu.edu.ua 
