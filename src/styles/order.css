@@ -1,0 +1,80 @@
+.order {
+  margin: 30px 0px;
+}
+.order-form {
+  max-width: 400px;
+  margin: 0 auto;
+  border: 1px solid rgb(63, 61, 61);
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #16191b;
+  color: #fff;
+}
+.order-form > input {
+  display: block;
+  margin: 0 auto;
+  width: 220px;
+  height: 25px;
+  border-radius: 10px;
+  padding: 15px 10px;
+  border: 1px solid black;
+}
+.order-form p {
+  margin-bottom: 10px;
+  margin-left: 75px;
+  font-family: Rubik, sans-serif;
+  font-weight: 500;
+}
+.order-form > input:active,
+.order-form > input:hover,
+.order-form > input:focus {
+  outline: 0;
+  outline-offset: 0;
+}
+.order-form > .order-form__error:not(:last-child) {
+  display: block;
+  margin-bottom: 20px;
+}
+.order-form__submit-btn {
+  display: block;
+  margin: 0 auto;
+  width: 170px;
+  height: 30px;
+  border-radius: 10px;
+  border: 1px solid #fff;
+  background: none;
+  color: #fff;
+  transition: background 0.1s ease-in-out 0s;
+  cursor: pointer;
+}
+.order-form__submit-btn:hover {
+  background: rgb(64, 105, 218);
+  transition: background 0.1s ease-in-out 0s;
+}
+
+.order-form__email {
+}
+.order-form__full-name {
+}
+.order-form__tel {
+}
+.order-form__punct {
+}
+.order-form__area {
+}
+.order-form__rayon {
+}
+.order-form__address {
+}
+.order-form__error {
+  color: rgb(206, 29, 29);
+  font-family: Rubik, sans-serif;
+  font-weight: 400;
+  text-align: center;
+}
+.order-form__error-message {
+  width: 200px;
+  text-align: center;
+  color: rgb(206, 29, 29);
+  margin-top: 30px;
+}

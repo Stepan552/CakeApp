@@ -1,9 +1,12 @@
-import React, { useContext } from "react";
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
 import styles from "./search.module.css";
 import searchIcon from "../../images/search-icon.png";
-import { SearchContext } from "../../App";
+import { setSearchValue } from "../../redux/Slices/filterSlice";
+
 const Search = () => {
-  const { searchValue, setSearchValue } = useContext(SearchContext);
+  const searchValue = useSelector((state) => state.filter.searchValue);
+  const dispatch = useDispatch();
   return (
     <div className={styles.search}>
       <input
@@ -11,7 +14,7 @@ const Search = () => {
         className={styles.sr}
         placeholder="Пошук..."
         value={searchValue}
-        onChange={(ev) => setSearchValue(ev.target.value)}
+        onChange={(ev) => dispatch(setSearchValue(ev.target.value))}
       />
       <img src={searchIcon} alt="search logo" className={styles.icon_sr} />
     </div>

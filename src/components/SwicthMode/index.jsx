@@ -1,11 +1,13 @@
-import React, { useContext } from "react";
-import { SwicthModeContext } from "../../App";
+import React from "react";
 import styles from "./switchMode.module.css";
+import { useSelector, useDispatch } from "react-redux";
+import { changeMode } from "../../redux/Slices/modeSlice";
 
 const SwicthMode = () => {
-  const { isDarkMode, setIsDarkMode } = useContext(SwicthModeContext);
+  const isDarkMode = useSelector((state) => state.mode.isDarkMode);
+  const dispatch = useDispatch();
   return (
-    <div className={styles.switch} onClick={() => setIsDarkMode(!isDarkMode)}>
+    <div className={styles.switch} onClick={() => dispatch(changeMode())}>
       <div
         className={`${styles.switch_circle} ${
           isDarkMode ? styles.right : styles.left

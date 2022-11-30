@@ -1,19 +1,15 @@
-import React, { useEffect, useState, useContext } from "react";
-import axios from "axios";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import DessertCard from "../components/DessertCard";
-import { SearchContext } from "../App";
+import { getCakesAndSave } from "../redux/Slices/cakeSlice.js";
 
 const Home = () => {
-  const { searchValue } = useContext(SearchContext);
-  const [dessertCards, setDessertCards] = useState([]);
+  const searchValue = useSelector((state) => state.filter.searchValue);
+  const dessertCards = useSelector((state) => state.cake.cakes);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    axios
-      .get(
-        `https://635144badfe45bbd55bb6c8e.mockapi.io/cakes?title=${searchValue}`
-      )
-      .then((res) => setDessertCards(res.data))
-      .catch((error) => console.error(error));
+    dispatch(getCakesAndSave({ searchValue }));
   }, [searchValue]);
   return (
     <main className="content">

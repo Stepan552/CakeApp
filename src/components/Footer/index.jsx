@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { SwicthModeContext } from "../../App";
+import React from "react";
+import { useSelector } from "react-redux";
 import "../../styles/footer.css";
 import masterCardImg from "../../images/payment/MasterCard.png";
 import visaImg from "../../images/payment/Visa.png";
@@ -9,7 +9,7 @@ import vkImg from "../../images/social/vk.png";
 import youtubeImg from "../../images/social/youtube.png";
 
 const Footer = () => {
-  const { isDarkMode } = useContext(SwicthModeContext);
+  const isDarkMode = useSelector((state) => state.mode.isDarkMode);
   return (
     <footer className={`footer  ${isDarkMode ? "dark_mode" : "light_mode"}`}>
       <div className="container">

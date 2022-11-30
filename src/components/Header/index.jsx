@@ -1,20 +1,27 @@
-import React, { useContext } from "react";
+import React from "react";
+import { useSelector } from "react-redux";
+import SwicthMode from "../SwicthMode";
 import { Link } from "react-router-dom";
 import styles from "./header.module.css";
 import "../../styles/navigation.css";
-import SwicthMode from "../SwicthMode";
-import { SwicthModeContext } from "../../App";
 import Logo from "../Logo";
 import Search from "../Search";
+import basketIcon from "../../images/basket/basket-icon.png";
 
 const Header = () => {
-  const { isDarkMode } = useContext(SwicthModeContext);
+  const isDarkMode = useSelector((state) => state.mode.isDarkMode);
+  const { items } = useSelector((state) => state.basket);
+  let countItems = 0;
+  if (items.length) {
+    countItems = items.reduce((acc, item) => acc + item.count, 0);
+  }
+
   const Links = [
     { title: "На початок", route: "/" },
     { title: "Про нас", route: "/about" },
     { title: "Начинки", route: "/inner" },
     { title: "Меню", route: "/menu" },
-    { title: "Замовити", route: "/order" },
+    { title: "Замовити", route: "/order/goods" },
     { title: "Питання", route: "/questions" },
   ];
 
@@ -34,6 +41,12 @@ const Header = () => {
             ))}
           </nav>
           <SwicthMode />
+          <div className={styles.basket}>
+            <Link to="/basket">
+              <img src={basketIcon} alt="basket icon" />
+              <div className={styles.count_goods}>{countItems}</div>
+            </Link>
+          </div>
         </div>
       </div>
     </header>

@@ -1,13 +1,26 @@
-import React, { useContext } from "react";
+import React from "react";
 import BtnBasket from "../UI/ButtonBasket";
 import "../../styles/goods.css";
-import { SwicthModeContext } from "../../App";
+import { useSelector, useDispatch } from "react-redux";
+import { addItem } from "../../redux/Slices/basketSlice";
 const DessertCard = ({ title, description, price, urlImage }) => {
-  const { isDarkMode } = useContext(SwicthModeContext);
+  const dispatch = useDispatch();
+  const isDarkMode = useSelector((state) => state.mode.isDarkMode);
+
+  const handleClick = () => {
+    const itemBasket = {
+      title,
+      description,
+      price,
+      urlImage,
+    };
+    dispatch(addItem(itemBasket));
+  };
+
   return (
     <div className="goods_card">
       <div className="goods_card__image">
-        <img src={urlImage} alt="dessert photo" />
+        <img src={urlImage} alt="dessert" />
       </div>
       <div className="goods_card__details">
         <div className="goods_card__info">
@@ -15,7 +28,10 @@ const DessertCard = ({ title, description, price, urlImage }) => {
           <p className="goods_card__description">{description}</p>
         </div>
         <div className="goods_card__basket">
-          <BtnBasket mode={isDarkMode ? "dark_mode" : "light_mode"}>
+          <BtnBasket
+            mode={isDarkMode ? "dark_mode" : "light_mode"}
+            onClick={handleClick}
+          >
             В корзину
           </BtnBasket>{" "}
           {/* button is taken prop mode (name of mode class) */}
